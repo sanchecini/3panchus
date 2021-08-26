@@ -1,0 +1,166 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+/* BASIC */
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  
+}
+
+*{
+
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+
+
+.login-formulario{
+  position: relative;
+  min-height: 600px;
+  z-index: 0;
+  background: #AF9557;
+  padding: 40px;
+  justify-content: center;
+  display: grid;
+  grid-template-rows: 1fr auto 1 fr;
+  align-items: center;
+
+}
+
+.contenedor{
+  max-width:900px;
+  margin: 0 auto;
+}
+.login-formulario h1{
+  text-align: center;
+  font-size: 40px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.login-formulario h2{
+  font-size: 30px;
+  line-height: 40px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #151515;
+  text-align: center;
+}
+
+.login-formulario .principal{
+  position: relative;
+  display: flex;
+  margin: 30px 0;
+
+}
+
+.contenido{
+  flex-basis: 50%;
+  padding: 48px 48px;
+  background: #fff;
+  box-shadow: 2px 9px 49px -17px rgba(0,0,0,0.1);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.formulario-img{
+  flex-basis: 50%;
+  background: #f4f9fd;
+  background-size: cover;
+  padding: 40px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  align-items: center;
+  display: grid;
+}
+
+.formulario-img img {
+  max-width: 100%;
+}
+
+.boton-login, button, input{
+  border-radius: 35px;
+
+}
+.boton-login:hover{
+  transition: 0.5s ease;
+
+}
+
+.login-formulario form{
+  margin: 30px 0;
+
+}
+
+.login-formulario input{
+  outline: none;
+  margin-bottom: 15px;
+  font-stretch: 16px;
+  color: black;
+  text-align: left;
+  padding: 14px 20px;
+  width: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid #e5e5e5;
+  background: #f7fafc;
+  transition: 0.3s ease;
+
+
+}
+
+.login-formulario input:focus{
+  background: transparent;
+  border: 1px solid #511515;
+
+
+}
+
+.login-formulario button{
+  font-size: 18px;
+  color: #fff;
+  width: 100%;
+  background: #511515;
+  border: none;
+  padding: 14px 15px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.login-formulario button:hover{
+  background: #CA8070;
+}
+
+
+/* Responsive */
+
+@media(max-width: 736px) {
+  .login-formulario .principal{
+      flex-direction: column;
+
+  }
+  .login-formulario form{
+      margin-top: 30px;
+      margin-bottom: 10px;
+  }
+  .formulario-img {
+      border-radius: 0;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      order: 2;
+
+  }
+  .contenido{
+      order: 1;
+      border-radius: 0;
+      border-bottom-left-radius: 8px;
+      border-top-right-radius: 8px;
+
+      
+  }
+
+}
