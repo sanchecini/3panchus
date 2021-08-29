@@ -8,6 +8,9 @@ $sentenciaSQL= $conexion->prepare("SELECT * FROM menu");
 $sentenciaSQL->execute();
 $lista_menu=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
+$sentenciaContacto= $conexion->prepare("SELECT * FROM contacto");
+$sentenciaContacto->execute();
+$lista_contacto=$sentenciaContacto->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
