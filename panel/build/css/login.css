@@ -20,7 +20,7 @@ body {
 
 .login-formulario{
   position: relative;
-  min-height: 600px;
+  min-height: 100vh;
   z-index: 0;
   background: #AF9557;
   padding: 40px;
@@ -32,7 +32,7 @@ body {
 }
 
 .contenedor{
-  max-width:900px;
+  max-width:1000px;
   margin: 0 auto;
 }
 .login-formulario h1{
