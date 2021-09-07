@@ -16,7 +16,7 @@
   <body>
 
   <?php 
-  $url="http://".$_SERVER['HTTP_HOST']."/3panchus"; 
+  $url="http://".$_SERVER['HTTP_HOST']."/"; 
   $route="/panel/seccion/"; 
   
   ?>

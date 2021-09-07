@@ -36,7 +36,7 @@ $lista_contacto=$sentenciaContacto->fetchAll(PDO::FETCH_ASSOC);
 
             <section class="services section bd-container" id="services">
                 
-                <h2 class="section-title">100% Familiar</h2>
+                <h2 class="section-title familiar">100% Familiar</h2>
 
                 <div class="services__container  bd-grid">
                     <div class="services__content">

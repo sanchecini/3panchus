@@ -7,7 +7,7 @@ include ("panel/config/conexion.php");
 ?>
 
 <?php 
-      $sentenciaPromociones= $conexion->prepare("SELECT * FROM promociones WHERE id=3");
+      $sentenciaPromociones= $conexion->prepare("SELECT * FROM promociones ORDER BY rand() LIMIT 1");
       $sentenciaPromociones->execute();
       $lista_slider=$sentenciaPromociones->fetchAll(PDO::FETCH_ASSOC);
 
@@ -154,7 +154,7 @@ include ("panel/config/conexion.php");
                     </div>
 
                     <div class="contact__button">
-                        <a href="encuesta.php" class="button">Realizar</a>
+                        <a href="index.php" class="button">Realizar</a>
                     </div>
                 </div>
             </section>

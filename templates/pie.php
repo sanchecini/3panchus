@@ -34,7 +34,7 @@
         <div class="footer__content">
             <h3 class="footer__title">Información</h3>
             <ul>
-                <li><a href="encuesta.php" class="footer__link">Encuesta</a></li>
+                <li><a href="index.php" class="footer__link">Encuesta</a></li>
                 <li><a href="contacto.php" class="footer__link">Mapa</a></li>
                 
             </ul>
@@ -60,6 +60,9 @@
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="build/js/main.js"></script>
+    
+
+
 </body>
 </html>
 
