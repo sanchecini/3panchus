@@ -60,6 +60,7 @@
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="build/js/main.js"></script>
+    <script src="build/js/script.js"></script>
     
 
 

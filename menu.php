@@ -19,7 +19,7 @@ $lista_contacto=$sentenciaContacto->fetchAll(PDO::FETCH_ASSOC);
         
         <h2 class="section-title">Menu</h2>
 
-        <div class="menu__container bd-grid">
+        <div class="menu__continer bd-grid">
        
         <?php foreach($lista_menu as $menu) { ?>
             <div class="menu__content">

@@ -19,7 +19,7 @@ $lista_eventos=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
         
         <h2 class="section-title">Galeria de Eventos </h2>
 
-        <div class="menu__container bd-grid">
+        <div class="menu__continer bd-grid">
        
         <?php foreach($lista_eventos as $eventos) { ?>
             <div class="menu__content">

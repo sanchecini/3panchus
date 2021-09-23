@@ -7,9 +7,19 @@ include ("panel/config/conexion.php");
 ?>
 
 <?php 
-      $sentenciaPromociones= $conexion->prepare("SELECT * FROM promociones ORDER BY rand() LIMIT 1");
+      $sentenciaPromociones= $conexion->prepare("SELECT * FROM promociones WHERE id=1");
       $sentenciaPromociones->execute();
       $lista_slider=$sentenciaPromociones->fetchAll(PDO::FETCH_ASSOC);
+      
+      $sentenciaPromociones2= $conexion->prepare("SELECT * FROM promociones WHERE id=2");
+      $sentenciaPromociones2->execute();
+      $lista_slider2=$sentenciaPromociones2->fetchAll(PDO::FETCH_ASSOC);
+      
+      $sentenciaPromociones3= $conexion->prepare("SELECT * FROM promociones WHERE id=3");
+      $sentenciaPromociones3->execute();
+      $lista_slider3=$sentenciaPromociones3->fetchAll(PDO::FETCH_ASSOC);
+
+
 
       $sentenciaMenu= $conexion->prepare("SELECT * FROM menu LIMIT 3");
       $sentenciaMenu->execute();
@@ -37,20 +47,62 @@ include ("panel/config/conexion.php");
         
         <!--========== Promociones ==========-->
         
-         <section class="home" id="promociones">
-         <?php foreach($lista_slider as $slider) { ?>
-                <div class="home__container bd-container bd-grid">
-                    <div class="home__data">
-                        <h1 class="home__title"><?php echo $slider['nombre']; ?></h1>
-                        <h2 class="home__subtitle"><?php echo $slider['descripcion']; ?></h2>
-                        <h2 class=""><?php echo $slider['dias']; ?></h1>
-                        <a href="promociones.php" class="button">Ver mas</a>
-                    </div>
-    
-                    <img src="img/<?php echo $slider['imagen']; ?>" alt="" class="home__img">
-                     <?php } ?>
+         <section class="promos">
+     <div class="slider bd-container bd-grid">
+     <?php foreach($lista_slider as $slider) { ?>
+        <div class="slide active" style="background-image: url('img/<?php echo $slider['imagen']; ?>');">
+            <div class="container">
+                <div class="caption transparente">
+                    <h1><?php echo $slider['nombre']; ?></h1>
+                    <p><?php echo $slider['descripcion']; ?></p>
+                    <p><?php echo $slider['dias']; ?></p>
+                    <a href="promociones.php">Ver más</a>
                 </div>
-            </section>
+                <?php } ?>
+            </div>
+        </div>
+
+
+        <?php foreach($lista_slider2 as $slider2) { ?>
+        <div class="slide" style="background-image: url('img/<?php echo $slider2['imagen']; ?>');">
+            <div class="container">
+                <div class="caption transparente">
+                <h1><?php echo $slider2['nombre']; ?></h1>
+                    <p><?php echo $slider2['descripcion']; ?></p>
+                    <p><?php echo $slider2['dias']; ?></p>
+                    <a href="promociones.php">Ver más</a>
+                </div>
+                <?php } ?>
+            </div>
+        </div>
+
+        <?php foreach($lista_slider3 as $slider3) { ?>
+        <div class="slide" style="background-image: url('img/<?php echo $slider3['imagen']; ?>'); ">
+            <div class="container">
+                <div class="caption transparente">
+                <h1><?php echo $slider3['nombre']; ?></h1>
+                    <p><?php echo $slider3['descripcion']; ?></p>
+                    <p><?php echo $slider3['dias']; ?></p>
+                    <a href="promociones.php">Ver más</a>
+                </div>
+                <?php } ?>
+            </div>
+        </div>
+     </div>
+   
+    <!-- controls  -->
+    <div class="controls">
+        <div class="prev"><</div>
+        <div class="next">></div>
+    </div>
+
+    <!-- indicators -->
+    <div class="indicator">
+    </div>
+
+  </section>
+
+  
 <!--========== Nosotros ==========-->
        
 <section class="about section bd-container" id="nosotros">

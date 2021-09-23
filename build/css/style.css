@@ -1,0 +1,185 @@
+
+
+.promos{
+	height: 100vh;
+	overflow:hidden;
+	position: relative;
+}
+
+
+.promos .slide{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	z-index:1; 
+	display:none;
+	padding:10px 15px;
+	animation: slide 4s ease;
+}
+.promos .slide.active{
+	display: flex;
+}
+@keyframes slide{
+	0%{
+		transform:scale(1.1);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+	
+}
+
+.promos .container{
+	 flex-grow: 1;
+	 align-content: center;
+	 
+}
+.promos .caption{
+	
+	margin: auto;
+  width: 50%;
+  height: 50%;
+  
+  padding: 5px;
+  text-align: center;
+  
+  
+}
+.transparente{
+	background-color: rgba(255,255,255,.3);
+    transition: .5s;
+    backdrop-filter: blur(10px);
+  color: #fff;
+  text-align: center;
+  border-radius: 5%;
+}
+
+
+.promos .caption h1{
+	font-size: 2.25rem;
+  color: #EC3022;
+  margin-bottom: .5rem;
+	
+}
+.promos .slide.active .caption h1{
+	opacity:0;
+	animation: captionText .5s ease forwards;
+	animation-delay:1s;
+}
+.promos .caption p{
+	font-size: 1.5rem;
+  color: black;
+  margin-bottom: 2rem;
+}
+.promos .slide.active .caption p{
+	opacity:0;
+	animation: captionText .5s ease forwards;
+	animation-delay:1.2s;
+}
+.promos .caption a{
+	display: inline-block;
+	background-color: #EC3022;
+	color: #FFF;
+	padding: .75rem 1rem;
+	border-radius: .5rem;
+	transition: .3s;
+}
+
+.promos .slide.active .caption a{
+	opacity:0;
+	animation: captionText .5s ease forwards;
+	animation-delay:1.4s;
+}
+
+@keyframes captionText{
+	0%{
+		opacity:0; transform: translateX(-100px);
+	}
+	100%{
+	 opacity:1; transform: translateX(0px);	
+	}
+}
+
+.promos .controls .prev,
+.promos .controls .next{
+ position: absolute;
+ z-index:2;
+ top:50%;
+ height:40px;
+ width: 40px;
+ margin-top: -20px;
+ color:#ffffff;
+ background-color: #EC3022;
+ text-align: center;
+ line-height: 40px;
+ font-size:20px;
+ cursor:pointer;
+ transition: all .5s ease;
+}
+.promos .controls .prev:hover,
+.promos .controls .next:hover{
+	background-color: #000000;
+}
+.promos .controls .prev{
+ left:0;
+}
+.promos .controls .next{
+ right:0;
+}
+
+.promos .indicator{
+	position: absolute;
+	left:50%;
+	bottom:30px;
+	z-index: 2;
+	transform: translateX(-50%);
+}
+
+.promos .indicator div{
+	display: inline-block;
+	width:25px;
+	height: 25px;
+	color:#ffffff;
+	background-color: #EC3022;;
+	border-radius:50%;
+	text-align: center;
+	line-height: 25px;
+	margin:0 3px;
+}
+
+.promos .indicator div.active{
+ background-color: #000;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+	.controls{
+		display: none;
+	}
+	.promos .caption h1 {
+		font-size: 20px;
+		color: #EC3022;
+		margin-bottom: .5rem;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
