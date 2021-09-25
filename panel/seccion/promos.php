@@ -159,69 +159,18 @@ switch($accion){
 
 ?>
 
-<div class="col-md-5">
 
-<div class="card">
-    <div class="card-header">
-       Datos de promociones
-    </div>
-
-    <div class="card-body">
-    <form id="nuevo" name="nuevo" method="POST" action="" enctype="multipart/form-data" autocomplete="off">
-    <input type="hidden" name="id" id="id" value="<?php echo $promociones['id']; ?>" >
-    <div class="form-group">
-        <label for="nombre">Nombre</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre; ?>" />
-        </div>
-                    
-        <div class="form-group">
-        <label for="descripcion">Descripcion</label>
-        <input type="text" class="form-control" id="descripcion" name="descripcion" value="<?php echo $descripcion; ?>" />
-        </div>
-                   
-        <div class="form-group">
-        <label for="imagen">Imagen</label>
-
-        <br/>
-        
-        <?php  if(($imagen)!=""){ ?>
-            <img class="" src="../../img/<?php echo $imagen; ?>" width="50" alt="">
-            
-        <?php }?>
-
-        <input type="file" class="form-control" id="imagen" name="imagen"  />
-        </div>
-
-        <div class="form-group">
-        <label for="categoria">Dias</label>
-        <input type="text" class="form-control" id="dias" name="dias" value="<?php echo $dias; ?>" />
-        </div>
-                    
-        
-			
-        <div class="btn-group" role="group" aria-label="">
-        <button id="guardar" name="accion" <?php echo($accion=="Seleccionar")?"disabled":""; ?> value="Guardar" type="submit" class="btn btn-success">Guardar</button>
-        <button id="modificar" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Modificar" type="submit" class="btn btn-warning">Modificar</button>
-        <button id="cancelar" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Cancelar" type="submit" class="btn btn-danger">Cancelar</button>
-		
-        </div>
-				
-				
-		
-				
-	</form>
-    </div>
 
     
-    </div>
+    
 
         
         
         
-</div>
 
-<div class="col-md-7" >
-        <table class="table table-bordered" >
+
+<div class="" >
+        <table class="table " >
             <thead>
                 <tr >
                     <th>Nombre</th>
@@ -235,16 +184,16 @@ switch($accion){
             <tbody>
                 <?php foreach($lista_promociones as $promociones){?>
                 <tr>
-                    <td><?php echo $promociones['nombre']; ?> </td>
-                    <td><?php echo $promociones['descripcion']; ?></td>
-                    <td>
+                    <td data-label="Nombre"><?php echo $promociones['nombre']; ?> </td>
+                    <td data-label="Descripcion"><?php echo $promociones['descripcion']; ?></td>
+                    <td data-label="img">
                         <img src="../../img/<?php echo $promociones['imagen']; ?>" width="50" alt="">
                         
                     
                     </td>                    
-                    <td><?php echo $promociones['dias']; ?></td>
+                    <td data-label="Dias"><?php echo $promociones['dias']; ?></td>
                    
-                    <td> 
+                    <td data-label="Acciones"> 
                         <form method="post">
                             <input type="hidden" name="id" id="id" value="<?php echo $promociones['id']; ?>" >
 
