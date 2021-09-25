@@ -157,72 +157,71 @@ switch($accion){
 
 ?>
 
-<div class="col-md-5">
-
-<div class="card">
-    <div class="card-header">
-       Datos de Menu
-    </div>
-
-    <div class="card-body">
+<
+<div class="container">
+        <h1>Menú</h1>
     <form id="nuevo" name="nuevo" method="POST" action="" enctype="multipart/form-data" autocomplete="off">
     <input type="hidden" name="id" id="id" value="<?php echo $menu['id']; ?>" >
-    <div class="form-group">
-        <label for="nombre">Nombre</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre; ?>" />
-        </div>
-                    
-        <div class="form-group">
-        <label for="descripcion">Descripcion</label>
-        <input type="text" class="form-control" id="descripcion" name="descripcion" value="<?php echo $descripcion; ?>" />
-        </div>
-                   
-        <div class="form-group">
-        <label for="imagen">Imagen</label>
-
-        <br/>
-        
-        <?php  if(($imagen)!=""){ ?>
-            <img class="" src="../../img/<?php echo $imagen; ?>" width="50" alt="">
-            
-        <?php }?>
-
-        <input type="file" class="form-control" id="imagen" name="imagen"  />
-        </div>
-
-        <div class="form-group">
-        <label for="categoria">Categoria</label>
-        <input type="text" class="form-control" id="categoria" name="categoria" value="<?php echo $categoria; ?>" />
-        </div>
-                    
-        <div class="form-group">
-        <label for="precio">Precio</label>
-        <input type="text" class="form-control" id="precio" name="precio" value="<?php echo $precio; ?>" />
-        </div>
-			
-        <div class="btn-group" role="group" aria-label="">
-        <button id="guardar" name="accion" <?php echo($accion=="Seleccionar")?"disabled":""; ?> value="Guardar" type="submit" class="btn btn-success">Guardar</button>
-        <button id="modificar" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Modificar" type="submit" class="btn btn-warning">Modificar</button>
-        <button id="cancelar" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Cancelar" type="submit" class="btn btn-danger">Cancelar</button>
-		
-        </div>
-				
-				
-		
-				
-	</form>
-    </div>
-
     
+    <div class="row">
+                    <div class="column">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre; ?>" required />
+                    </div>
+
+                    <div class="column">
+                            <label for="imagen">Imagen</label>
+
+                            <br/>
+
+                            <?php  if(($imagen)!=""){ ?>
+                                <img class="" src="../../img/<?php echo $imagen; ?>" width="50" alt="">
+                                
+                            <?php }?>
+
+                            <input type="file" class="form-control" id="imagen" name="imagen" required />
+                    </div>
+         </div>
+
+         <div class="row">
+                    <div class="column">
+                        <label for="nombre">Descripción</label>
+                        <input type="text" class="form-" id="descripcion" name="descripcion" value="<?php echo $descripcion; ?>" required />
+                    </div>
+             </div>
+                    
+             <div class="row">
+                    <div class="column">
+                    <label for="categoria">Categoria</label>
+                     <input type="text" class="form-control" id="categoria" name="categoria" value="<?php echo $categoria; ?>" required />
+                    </div>
+                    <div class="column">
+                      <label for="precio">Precio</label>
+                     <input type="text" class="form-control" id="precio" name="precio" value="<?php echo $precio; ?>" required />
+                    </div>
+             </div>
+                   
+        
+
+        
+			
+        <div class="" role="" >
+        <button id="guardar" name="accion" <?php echo($accion=="Seleccionar")?"disabled":""; ?> value="Guardar" type="submit" class="buttones btn-succes">Guardar</button>
+        <button id="modificar" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Modificar" type="submit" class=" buttones btn-modificar">Modificar</button>
+        <button id="cancelar" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Cancelar" type="submit" class="buttones btn-rojo">Cancelar</button>
+		
+        </div>
+				
+				
+		
+        </form>
     </div>
 
-        
-        
-        
-</div>
 
-<div class="col-md-7" >
-        <table class="table table-bordered" >
+ <br/>
+
+
+    <table class="table">
             <thead>
                 <tr >
                     <th>Nombre</th>
@@ -237,22 +236,23 @@ switch($accion){
             <tbody>
                 <?php foreach($lista_menu as $menu){?>
                 <tr>
-                    <td><?php echo $menu['nombre']; ?> </td>
-                    <td><?php echo $menu['descripcion']; ?></td>
-                    <td>
+                    <td data-label="Nombre"><?php echo $menu['nombre']; ?> </td>
+                    <td data-label="Descripción"><?php echo $menu['descripcion']; ?></td>
+                    <td data-label="Imagen">
                         <img src="../../img/<?php echo $menu['imagen']; ?>" width="50" alt="">
                         
                     
                     </td>                    
-                    <td><?php echo $menu['categoria']; ?></td>
-                    <td><?php echo $menu['precio']; ?></td>
-                    <td> 
+                    <td data-label="Categoría"><?php echo $menu['categoria']; ?></td>
+                    <td data-label="Precio"><?php echo $menu['precio']; ?></td>
+                    <td data-label="Acciones"> 
                         <form method="post">
                             <input type="hidden" name="id" id="id" value="<?php echo $menu['id']; ?>" >
 
-                            <input type="submit" name="accion" value="Seleccionar" class="btn btn-primary" >
+                           
+                            <input type="submit" name="accion" value="Seleccionar" class="buttones btn-seleccionar" >
                             
-                            <input type="submit" name="accion" value="Borrar" class="btn btn-danger" >
+                            <input type="submit" name="accion" value="Borrar" class="buttones btn-rojo" >
 
 
                         </form>

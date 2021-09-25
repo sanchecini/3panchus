@@ -165,75 +165,75 @@ switch($accion){
 
 ?>
 
-<div class="col-md-4">
-
-<div class="card">
-    <div class="card-header">
-       Datos de Contacto
-    </div>
-
-    <div class="card-body">
+<div class="container">
+        <h1>Contacto</h1>
     <form id="nuevo" name="nuevo" method="POST" action="" enctype="multipart/form-data" autocomplete="off">
     <input type="hidden" name="id" id="id" value="<?php echo $contacto['id']; ?>" >
-    <div class="form-group">
-        <label for="nombre">Nombre</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre; ?>" readonly  />
-        </div>
-                
-        <div class="form-group">
-        <label for="imagen">Imagen</label>
+    
+    <div class="row">
+                    <div class="column">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre; ?>" readonly />
+                    </div>
 
-        <br/>
-        
-        <?php  if(($imagen)!=""){ ?>
-            <img class="" src="../../img/<?php echo $imagen; ?>" width="50" alt="">
-            
-        <?php }?>
-        <input type="file" class="form-control" id="imagen" name="imagen"  />
+                    <div class="column">
+                        <label for="imagen">Imagen</label>
 
-        <div class="form-group">
-        <label for="descripcion">Descripcion</label>
-        <input type="text" class="form-control" id="descripcion" name="descripcion" value="<?php echo $descripcion; ?>" />
-        </div>
-                   
-         <div class="form-group">
-        <label for="categoria">Domicilio</label>
-        <input type="text" class="form-control" id="domicilio" name="domicilio" value="<?php echo $domicilio; ?>" />
+                      
+                        
+                        <input type="file" class="form-control" id="imagen" name="imagen"  />
+                        
+                   </div>
+                   <div class="column">
+                        <?php  if(($imagen)!=""){ ?>
+                            <img class="" src="../../img/<?php echo $imagen; ?>" width="50" alt="">
+                            
+                        <?php }?>
+                        </div>
         </div>
                     
-        <div class="form-group">
-        <label for="precio">Municipio</label>
-        <input type="text" class="form-control" id="municipio" name="municipio" value="<?php echo $municipio; ?>" />
-        </div>
-                   
-        <div class="form-group">
-        <label for="precio">Telefono</label>
-        <input type="text" class="form-control" id="telefono" name="telefono" value="<?php echo $telefono; ?>" />
-        </div>
+                
+             <div class="row">
+                    <div class="column">
+                     <label for="descripcion">Descripcion</label>
+                        <input type="text" class="form-control" id="descripcion" name="descripcion" value="<?php echo $descripcion; ?>" required />  
+                    </div>
+        
+            </div>    
+
+        <div class="row">
+                                      
+                    <div class="column">
+                        <label for="categoria">Domicilio</label>
+                        <input type="text" class="form-control" id="domicilio" name="domicilio" value="<?php echo $domicilio; ?>" required />
+                    </div>
+                    
+                    <div class="column">
+                        <label for="precio">Municipio</label>
+                        <input type="text" class="form-control" id="municipio" name="municipio" value="<?php echo $municipio; ?>" required />
+                    </div>
+                            
+                    <div class="column">
+                        <label for="precio">Telefono</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" value="<?php echo $telefono; ?>" required />
+                    </div>        
+         </div>
+
 			
-        <div class="btn-group" role="group" aria-label="">
+        <div class="" role="" >
         
-        <button id="modificar" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Modificar" type="submit" class="btn btn-warning">Modificar</button>
-        <button id="cancelar" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Cancelar" type="submit" class="btn btn-danger">Cancelar</button>
+        <button id="modificar" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Modificar" type="submit" class=" buttones btn-modificar">Modificar</button>
+        <button id="cancelar" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Cancelar" type="submit" class="buttones btn-rojo">Cancelar</button>
 		
         </div>
 				
-				
-		
-				
-	</form>
+        </form>
     </div>
 
-    
-    </div>
 
-        
-        
-        
-</div>
+ <br/>
 
-<div class="col-md-8" >
-        <table class="table table-bordered" >
+<table class="table">
             <thead>
                 <tr >
                     <th>Nombre</th>
@@ -267,7 +267,10 @@ switch($accion){
                         <form method="post">
                             <input type="hidden" name="id" id="id" value="<?php echo $contacto['id']; ?>" >
 
-                            <input type="submit" name="accion" value="Seleccionar" class="btn btn-primary" >
+                            
+                            <input type="submit" name="accion" value="Seleccionar" class="buttones btn-seleccionar" >
+                            
+                           
                             
                            
 

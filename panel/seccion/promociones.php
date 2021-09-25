@@ -159,69 +159,63 @@ switch($accion){
 
 ?>
 
-<div class="col-md-5">
-
-<div class="card">
-    <div class="card-header">
-       Datos de promociones
-    </div>
-
-    <div class="card-body">
+<div class="container">
+        <h1>Promociones</h1>
     <form id="nuevo" name="nuevo" method="POST" action="" enctype="multipart/form-data" autocomplete="off">
     <input type="hidden" name="id" id="id" value="<?php echo $promociones['id']; ?>" >
-    <div class="form-group">
-        <label for="nombre">Nombre</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre; ?>" />
-        </div>
-                    
-        <div class="form-group">
-        <label for="descripcion">Descripcion</label>
-        <input type="text" class="form-control" id="descripcion" name="descripcion" value="<?php echo $descripcion; ?>" />
-        </div>
-                   
-        <div class="form-group">
-        <label for="imagen">Imagen</label>
-
-        <br/>
-        
-        <?php  if(($imagen)!=""){ ?>
-            <img class="" src="../../img/<?php echo $imagen; ?>" width="50" alt="">
-            
-        <?php }?>
-
-        <input type="file" class="form-control" id="imagen" name="imagen"  />
-        </div>
-
-        <div class="form-group">
-        <label for="categoria">Dias</label>
-        <input type="text" class="form-control" id="dias" name="dias" value="<?php echo $dias; ?>" />
-        </div>
-                    
-        
-			
-        <div class="btn-group" role="group" aria-label="">
-        <button id="guardar" name="accion" <?php echo($accion=="Seleccionar")?"disabled":""; ?> value="Guardar" type="submit" class="btn btn-success">Guardar</button>
-        <button id="modificar" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Modificar" type="submit" class="btn btn-warning">Modificar</button>
-        <button id="cancelar" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Cancelar" type="submit" class="btn btn-danger">Cancelar</button>
-		
-        </div>
-				
-				
-		
-				
-	</form>
-    </div>
-
     
+
+        <div class="row">
+                    <div class="column">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre; ?>" required />
+                    </div>
+                    
+                    <div class="column">
+                        <label for="categoria">Dias</label>
+                        <input type="text" class="form-control" id="dias" name="dias" value="<?php echo $dias; ?>" required />   
+                    </div>
+
+                    <div class="column">
+                        <label for="imagen">Imagen</label>
+
+                         <input type="file" id="imagen" name="imagen"  />
+                    </div>
+                    <div class="column">
+                        <?php  if(($imagen)!=""){ ?>
+                            <img class="" src="../../img/<?php echo $imagen; ?>" width="50" alt="">
+                            
+                        <?php }?>
+                        </div>
+         </div>
+         <div class="row">
+                    <div class="column">
+                        <label for="descripcion">Descripcion</label>
+                        <input type="text" class="form-control" id="descripcion" name="descripcion" value="<?php echo $descripcion; ?>" required />
+                    </div>
+                    
+        </div>
+
+               
+                   
+               
+                    
+        
+        <div class="" role="" >
+        <button id="guardar" name="accion" <?php echo($accion=="Seleccionar")?"disabled":""; ?> value="Guardar" type="submit" class="buttones btn-succes">Guardar</button>
+        <button id="modificar" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Modificar" type="submit" class=" buttones btn-modificar">Modificar</button>
+        <button id="cancelar" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Cancelar" type="submit" class="buttones btn-rojo">Cancelar</button>
+		
+        </div>
+				
+        </form>
     </div>
 
-        
-        
-        
-</div>
 
-<div class="col-md-7" >
-        <table class="table table-bordered" >
+ <br/>
+
+
+<table class="table">
             <thead>
                 <tr >
                     <th>Nombre</th>
@@ -235,22 +229,22 @@ switch($accion){
             <tbody>
                 <?php foreach($lista_promociones as $promociones){?>
                 <tr>
-                    <td><?php echo $promociones['nombre']; ?> </td>
-                    <td><?php echo $promociones['descripcion']; ?></td>
-                    <td>
+                <td data-label="Nombre"><?php echo $promociones['nombre']; ?> </td>
+                <td data-label="Descripción"><?php echo $promociones['descripcion']; ?></td>
+                <td data-label="Imagen">
                         <img src="../../img/<?php echo $promociones['imagen']; ?>" width="50" alt="">
                         
                     
                     </td>                    
-                    <td><?php echo $promociones['dias']; ?></td>
+                    <td data-label="Días"><?php echo $promociones['dias']; ?></td>
                    
-                    <td> 
+                    <td data-label="Acciones"> 
                         <form method="post">
                             <input type="hidden" name="id" id="id" value="<?php echo $promociones['id']; ?>" >
 
-                            <input type="submit" name="accion" value="Seleccionar" class="btn btn-primary" >
+                            <input type="submit" name="accion" value="Seleccionar" class="buttones btn-seleccionar" >
                             
-                            <input type="submit" name="accion" value="Borrar" class="btn btn-danger" >
+                            <input type="submit" name="accion" value="Borrar" class="buttones btn-rojo" >
 
 
                         </form>
@@ -263,7 +257,9 @@ switch($accion){
         </table>
 
 
-</div>
+
+
+
 
 
 

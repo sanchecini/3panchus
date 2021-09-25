@@ -167,15 +167,17 @@ switch($accion){
                     <div class="column">
                 <label for="imagen">Imagen</label>
 
-                <br/>
+                    <input type="file" id="imagen" name="imagen"  />
+                  
                 
-                <?php  if(($imagen)!=""){ ?>
-                    <img class="" src="../../img/<?php echo $imagen; ?>" width="50" alt="">
-                    
-                <?php }?>
-
-                <input type="file" id="imagen" name="imagen" required />
-             </div>
+                    </div>
+                        <div class="column">
+                        <?php  if(($imagen)!=""){ ?>
+                            <img class="" src="../../img/<?php echo $imagen; ?>" width="50" alt="">
+                            
+                        <?php }?>
+                        </div>
+            
                </div>
            
             <div class="row">
