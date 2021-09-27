@@ -48,7 +48,7 @@
                         <li class="nav__item"><a href="menu.php" class="nav__link">Menu</a></li>
                         <li class="nav__item"><a href="eventos.php" class="nav__link">Eventos</a></li>
                         <li class="nav__item"><a href="contacto.php" class="nav__link">Contacto</a></li>
-                        <li class="nav__item"><a href="index.php" class="nav__link">Encuesta</a></li>
+                        <li class="nav__item"><a href="encuesta.php" class="nav__link">Encuesta</a></li>
 
                         
                     </ul>

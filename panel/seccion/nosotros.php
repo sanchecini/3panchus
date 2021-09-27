@@ -164,80 +164,74 @@ switch($accion){
 
 ?>
 
-<div class="col-md-5">
-
-<div class="card">
-    <div class="card-header">
-      Datos Nosotros
-    </div>
-
-    <div class="card-body">
+<div class="container">
+        <h1>Nosotros</h1>
     <form id="nuevo" name="nuevo" method="POST" action="" enctype="multipart/form-data" autocomplete="off">
     <input type="hidden" name="id" id="id" value="<?php echo $nosotros['id']; ?>" >
-    <div class="form-group">
-        <label for="nombre">Nombre</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre; ?>" />
-        </div>
+            <div class="row">
+                            <div class="column">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre; ?>" required />
+                            </div>
+                            
+                            <div class="column">
+                                <label for="imagen">Imagen</label>
+
+                                <input type="file" id="imagen" name="imagen"  />
+                            </div>
+                            <div class="column">
+                                <?php  if(($imagen)!=""){ ?>
+                                    <img class="" src="../../img/<?php echo $imagen; ?>" width="50" alt="">
+                                    
+                                <?php }?>
+                                </div>
+                </div>
+
+        <div class="row">
+                    <div class="column">
+                        <label for="descripcion">Descripcion</label>
+                        <input type="text" class="form-control" id="descripcion" name="descripcion" value="<?php echo $descripcion; ?>" required />
+                    </div>
                     
-                           
-        <div class="form-group">
-        <label for="imagen">Imagen</label>
-
-        <br/>
-        
-        <?php  if(($imagen)!=""){ ?>
-            <img class="" src="../../img/<?php echo $imagen; ?>" width="50" alt="">
-            
-        <?php }?>
-
-        <input type="file" class="form-control" id="imagen" name="imagen"  />
         </div>
 
-        <div class="form-group">
-        <label for="descripcion">Descripcion</label>
-        <input type="text" class="form-control" id="descripcion" name="descripcion" value="<?php echo $descripcion; ?>" />
+        <div class="row">
+                    <div class="column">
+                        <label for="descripcion2">Descripcion2</label>
+                        <input type="text" class="form-control" id="descripcion2" name="descripcion2" value="<?php echo $descripcion2; ?>" required />
+                    </div>
+                    
         </div>
 
-        <div class="form-group">
-        <label for="descripcion2">Descripcion2</label>
-        <input type="text" class="form-control" id="descripcion2" name="descripcion2" value="<?php echo $descripcion2; ?>" />
+        <div class="row">
+                    <div class="column">
+                            <label for="mision">Mision</label>
+                             <input type="text" class="form-control" id="mision" name="mision" value="<?php echo $mision; ?>" required/>
+                    </div>
+                    <div class="column">
+                        <label   label for="mision">Vision</label>
+                        <input type="text" class="form-control" id="vision" name="vision" value="<?php echo $vision; ?>" required/>
+                    </div>
+                    
         </div>
 
-        <div class="form-group">
-        <label for="descripcion2">Mision</label>
-        <input type="text" class="form-control" id="mision" name="mision" value="<?php echo $mision; ?>" />
-        </div>
-
-        <div class="form-group">
-        <label for="descripcion2">Vision</label>
-        <input type="text" class="form-control" id="vision" name="vision" value="<?php echo $vision; ?>" />
-        </div>
 
         
-			
-        <div class="btn-group" role="group" aria-label="">
-        <button id="guardar" name="accion" <?php echo($accion=="Seleccionar")?"disabled":""; ?> value="Guardar" type="submit" class="btn btn-success">Guardar</button>
-        <button id="modificar" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Modificar" type="submit" class="btn btn-warning">Modificar</button>
-        <button id="cancelar" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Cancelar" type="submit" class="btn btn-danger">Cancelar</button>
+        <div class="" role="" >
+        <button id="guardar" name="accion" <?php echo($accion=="Seleccionar")?"disabled":""; ?> value="Guardar" type="submit" class="buttones btn-succes">Guardar</button>
+        <button id="modificar" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Modificar" type="submit" class=" buttones btn-modificar">Modificar</button>
+        <button id="cancelar" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Cancelar" type="submit" class="buttones btn-rojo">Cancelar</button>
 		
         </div>
 				
-				
-		
-				
-	</form>
+        </form>
     </div>
 
-    
-    </div>
 
-        
-        
-        
-</div>
+ <br/>
 
-<div class="col-sm-7" >
-        <table class="table table-bordered" >
+
+<table class="table">
             <thead>
                 <tr >
                     <th>Nombre</th>
@@ -253,24 +247,24 @@ switch($accion){
             <tbody>
                 <?php foreach($lista_nosotros as $nosotros){?>
                 <tr>
-                    <td><?php echo $nosotros['nombre']; ?> </td>
-                    <td>
+                    <td data-label="Nombre"><?php echo $nosotros['nombre']; ?> </td>
+                    <td data-label="Imagen">
                         <img src="../../img/<?php echo $nosotros['imagen']; ?>" width="50" alt="">
                         
                     
                     </td>   
-                    <td><?php echo $nosotros['descripcion']; ?></td>
-                    <td><?php echo $nosotros['descripcion2']; ?></td>    
-                    <td><?php echo $nosotros['mision']; ?></td>   
-                    <td><?php echo $nosotros['vision']; ?></td>                
+                    <td data-label="Descripcion"><?php echo $nosotros['descripcion']; ?></td>
+                    <td data-label="Descripcion2"><?php echo $nosotros['descripcion2']; ?></td>    
+                    <td data-label="Misión"><?php echo $nosotros['mision']; ?></td>   
+                    <td data-label="Visión"><?php echo $nosotros['vision']; ?></td>                
                     
                     <td> 
                         <form method="post">
                             <input type="hidden" name="id" id="id" value="<?php echo $nosotros['id']; ?>" >
 
-                            <input type="submit" name="accion" value="Seleccionar" class="btn btn-primary" >
+                            <input type="submit" name="accion" value="Seleccionar" class="buttones btn-seleccionar" >
                             
-                            <input type="submit" name="accion" value="Borrar" class="btn btn-danger" >
+                            <input type="submit" name="accion" value="Borrar" class="buttones btn-rojo" >
 
 
                         </form>
@@ -282,8 +276,6 @@ switch($accion){
             </tbody>
         </table>
 
-
-</div>
 
 
 

@@ -534,3 +534,15 @@ img{
       
     }
 }
+
+
+.contener{
+  display: flex;align-items: center;justify-content: center;margin: 0 2rem 0;
+  border: 5px solid red;
+}
+.preguntas{
+ align-items: center;justify-content: center;margin: 0 2rem 0;
+}
+.optiones{
+  display: flex;align-items: center;justify-content: center;margin: 0 2rem 0;
+}

@@ -7,7 +7,7 @@
   --nav-width: 68px;
 
   /*===== Colors =====*/
-  --first-color: #4723D9;
+  --first-color: #CA8070;
   --first-color-light: #AFA5D9;
   --white-color: #F7F6FB;
   
@@ -107,23 +107,23 @@ a{
 
 .nav__logo-icon{
   font-size: 1.25rem;
-  color: var(--white-color);
+  color: black;
 }
 
 .nav__logo-name{
-  color: var(--white-color);
+  color: black;
   font-weight: 700;
 }
 
 .nav__link{
   position: relative;
-  color: var(--first-color-light);
+  color: var(--white-color);
   margin-bottom: 1.5rem;
   transition: .3s;
 }
 
 .nav__link:hover{
-  color: var(--white-color);
+  color: black;
 }
 
 .nav__icon{
